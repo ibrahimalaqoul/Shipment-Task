@@ -1,0 +1,33 @@
+{
+  "name": "shipment-task",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=production node index.js",
+    "test": "NODE_ENV=test jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ibrahimalaqoul/Shipment-Task.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ibrahimalaqoul/Shipment-Task/issues"
+  },
+  "homepage": "https://github.com/ibrahimalaqoul/Shipment-Task#readme",
+  "dependencies": {
+    "base-64": "^1.0.0",
+    "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^8.5.1",
+    "nodemon": "^2.0.20",
+    "pg": "^8.8.0",
+    "sequelize": "^6.24.0",
+    "sqlite3": "^5.1.2"
+  }
+}
