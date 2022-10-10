@@ -12,12 +12,15 @@ const notFoundPage = require('./error-handlers/404')
 const errorHandler = require('./error-handlers/500')
 const signUpRouter = require('./routes/signup')
 const signinRouter = require('./routes/signin')
+const fedexRouters = require('./routes/fedex-routes')
+const upsRouters = require('./routes/ups-routes')
 
 //middlewares
 app.use(express.json());// body parsing
 app.use(signUpRouter);
 app.use(signinRouter);
-
+app.use(fedexRouters);
+app.use(upsRouters);
 
 //home page
 app.get('/', (req, res) => {
