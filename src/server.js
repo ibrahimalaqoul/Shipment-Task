@@ -24,15 +24,11 @@ app.use(fedexRouters);
 app.use(upsRouters);
 app.use(relationalRoutes)
 
+
 //home page
 app.get('/', (req, res) => {
     res.status(200).send('Home Page!');
 });
-
-
-
-
-
 
 
 
