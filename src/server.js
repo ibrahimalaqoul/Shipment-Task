@@ -18,6 +18,7 @@ const relationalRoutes = require('./routes/relationalRoutes')
 
 //middlewares
 app.use(express.json());// body parsing
+app.use(cors()) // making our server as a public server
 app.use(signUpRouter);
 app.use(signinRouter);
 app.use(fedexRouters);
