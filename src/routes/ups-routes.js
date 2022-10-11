@@ -5,15 +5,17 @@ const bearer = require('../middlewares/bearer')
 
 
 
-routers.post('/upsCreate', bearer, async (req, res) => {
+routers.post('/upsCreate/:id', bearer, async (req, res) => {
     let { UPSID, shipmentServiceID, width, height, length, weight } = req.body;
+    let id = req.params.id;
     let newups = await Upsmodel.create({
         UPSID: UPSID,
         shipmentServiceID: shipmentServiceID,
         width: width,
         height: height,
         length: length,
-        weight: weight
+        weight: weight,
+        userId: id
     })
     res.status(201).send(newups);
 })

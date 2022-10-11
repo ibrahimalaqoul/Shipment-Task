@@ -5,15 +5,17 @@ const bearer = require('../middlewares/bearer')
 
 
 
-routers.post('/fedexCreate', bearer, async (req, res) => {
+routers.post('/fedexCreate/:id', bearer, async (req, res) => {
     let { FedExID, carrierServiceID, width, height, length, weight } = req.body;
+    let id = req.params.id;
     let newFedex = await Fedexmodel.create({
         FedExID: FedExID,
         carrierServiceID: carrierServiceID,
         width: width,
         height: height,
         length: length,
-        weight: weight
+        weight: weight,
+        userId: id
     })
     res.status(201).send(newFedex);
 })

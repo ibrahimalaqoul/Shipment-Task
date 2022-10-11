@@ -14,6 +14,7 @@ const signUpRouter = require('./routes/signup')
 const signinRouter = require('./routes/signin')
 const fedexRouters = require('./routes/fedex-routes')
 const upsRouters = require('./routes/ups-routes')
+const relationalRoutes = require('./routes/relationalRoutes')
 
 //middlewares
 app.use(express.json());// body parsing
@@ -21,6 +22,7 @@ app.use(signUpRouter);
 app.use(signinRouter);
 app.use(fedexRouters);
 app.use(upsRouters);
+app.use(relationalRoutes)
 
 //home page
 app.get('/', (req, res) => {

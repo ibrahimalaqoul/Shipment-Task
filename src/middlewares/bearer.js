@@ -1,7 +1,7 @@
 'use strict';
 // checking the user token if it is valid or not
 require('dotenv').config();
-const { usermodel } = require('../models/index')
+const { Usermodel } = require('../models/index')
 const JWT = require('jsonwebtoken');
 const base64 = require('base-64');
 
@@ -15,7 +15,7 @@ const bearer = async (req, res, next) => {
         if (userToken) {
             const token = JWT.verify(userToken, SECRET);// verifing the token got from the front end side
             console.log('token to be verified', token);
-            const User = await usermodel.findOne({ where: { username: token.username } })
+            const User = await Usermodel.findOne({ where: { username: token.username } })
             if (User) {
                 req.userToken = token;
                 req.User = User

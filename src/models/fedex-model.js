@@ -9,6 +9,7 @@ const Fedex = (sequelize, DataTypes) => sequelize.define('fedex', {
    },
    FedExID: {
       type: DataTypes.ENUM('fedex'),
+      defaultValue :'fedex',
       allowNull: false,
       validate: {
          notNull: {
@@ -18,7 +19,8 @@ const Fedex = (sequelize, DataTypes) => sequelize.define('fedex', {
 
    },
    carrierServiceID: {
-      type: DataTypes.ENUM('fedexAIR', 'fedexGroud')
+      type: DataTypes.ENUM('fedexAIR', 'fedexGroud'),
+
    },
    width: {
       type: DataTypes.INTEGER,

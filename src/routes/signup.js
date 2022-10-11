@@ -2,13 +2,13 @@
 // creating a signup endpoint for the users using express Router
 const routers = require('express').Router();
 
-const { usermodel } = require('../models/index')
+const { Usermodel } = require('../models/index')
 const bcrypt = require('bcrypt')
 
 routers.post('/signup/users', async (req, res) => {
     let { username, password, email, mobileNumber } = req.body;
    let hashedPassword = await bcrypt.hash(password,5);
-   let newUser = await usermodel.create({
+   let newUser = await Usermodel.create({
     username :username,
     password :hashedPassword,
     email :email,
