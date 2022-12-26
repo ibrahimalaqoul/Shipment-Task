@@ -25,8 +25,8 @@ routers.get('/getallfEDEX', bearer, async (req, res) => {
     res.status(200).send(shipments);
 });
 
-routers.delete('/deletefedex', bearer, async (req, res) => {
-    let deletedfedex = await Fedexmodel.delete({ where: { id: req.params.id } })
+routers.delete('/deletefedex/:id', bearer, async (req, res) => {
+    let deletedfedex = await Fedexmodel.destroy({ where: { id: req.params.id } })
     res.status(200).send(
         `shipment with ${deletedfedex.id} was deleted successfully`,
     );
